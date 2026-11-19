@@ -1,0 +1,19 @@
+name: CI - servicio-fidelizacion
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'servicio-fidelizacion/**'
+      - '.github/workflows/reusable-ci.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'servicio-fidelizacion/**'
+
+jobs:
+  ci:
+    uses: ./.github/workflows/reusable-ci.yml
+    with:
+      service: servicio-fidelizacion
+    secrets: inherit
